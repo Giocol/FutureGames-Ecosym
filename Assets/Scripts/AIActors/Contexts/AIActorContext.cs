@@ -5,6 +5,7 @@ namespace AIActors.Contexts {
     public class AIActorContext : ScriptableObject {
         public GameObject aiActor;
         public float movementSpeed;
-        public GameObject[] objectsToReach;
+        public GameObject[] targets;
+        public GameObject currentTarget;
     }
 }
