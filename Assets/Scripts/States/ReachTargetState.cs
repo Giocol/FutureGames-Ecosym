@@ -3,9 +3,7 @@
         public ReachTargetState(StateMachine stateMachine) : base(stateMachine) { }
 
         public override State Evaluate() {
-
-            // move towards target
-
+            stateMachine.GetContext().actorScript.MoveTowardsTargetPosition(stateMachine.GetContext().currentTarget.transform.position);
             return this;
         }
     }

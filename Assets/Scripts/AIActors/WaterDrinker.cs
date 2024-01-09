@@ -14,9 +14,9 @@ namespace AIActors {
         }
 
         protected override void PopulateContext() {
+            base.PopulateContext();
             context.aiActor = gameObject;
             context.targets = GetAllWaterSources();
-            context.movementSpeed = movementSpeed;
         }
 
         private GameObject[] GetAllWaterSources() {

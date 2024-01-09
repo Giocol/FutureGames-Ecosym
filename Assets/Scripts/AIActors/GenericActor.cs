@@ -22,9 +22,12 @@ namespace AIActors {
 
         protected abstract void FillValidStatesList();
 
-        protected abstract void PopulateContext();
+        protected virtual void PopulateContext() {
+            context.aiActor = this.gameObject;
+            context.actorScript = this;
+        }
 
-        public bool MoveTowardsTarget(Vector3 targetPosition) {
+        public bool MoveTowardsTargetPosition(Vector3 targetPosition) {
             return false;
         }
 
