@@ -11,6 +11,8 @@ namespace AIActors {
         [SerializeField] protected AIActorContext context;
         protected List<State> validStates;
         protected StateMachine stateMachine;
+        protected float movementSpeed = 5f;
+        protected float reachRange = 1f;
 
         protected virtual void Awake() {
             validStates = new List<State>();
@@ -28,7 +30,13 @@ namespace AIActors {
         }
 
         public bool MoveTowardsTargetPosition(Vector3 targetPosition) {
-            return false;
+            if(Vector3.Distance(this.transform.position, targetPosition) < reachRange) {
+                return true;
+            }
+            else {
+                this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, movementSpeed * Time.deltaTime);
+                return false;
+            }
         }
 
         private void Update() {

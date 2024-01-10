@@ -16,11 +16,7 @@ namespace AIActors {
         protected override void PopulateContext() {
             base.PopulateContext();
             context.aiActor = gameObject;
-            context.targets = GetAllWaterSources();
-        }
-
-        private GameObject[] GetAllWaterSources() {
-            return GameObject.FindGameObjectsWithTag("Water");
+            context.targetTag = "Water";
         }
     }
 }

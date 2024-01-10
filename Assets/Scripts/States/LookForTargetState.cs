@@ -10,9 +10,15 @@ namespace States {
         public override State Evaluate() {
             //find water
             Vector3 actorPosition = stateMachine.GetContext().aiActor.transform.position;
-            GameObject[] targetGameObjects = stateMachine.GetContext().targets;
-            stateMachine.GetContext().currentTarget = GetClosestTarget(actorPosition, targetGameObjects);
-            return stateMachine.GetState<ReachTargetState>();
+            GameObject[] targetGameObjects = GameObject.FindGameObjectsWithTag("Water"); //TODO: optimize this
+            if(targetGameObjects.Length > 0) {
+                stateMachine.GetContext().currentTarget = GetClosestTarget(actorPosition, targetGameObjects);
+                return stateMachine.GetState<ReachTargetState>();
+            }
+            else {
+                //TODO: transition to an idle state
+                return this;
+            }
         }
 
         private GameObject GetClosestTarget(Vector3 sourcePosition, GameObject[] targets) {
