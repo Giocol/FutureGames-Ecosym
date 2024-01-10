@@ -5,8 +5,6 @@ using UnityEngine;
 
 namespace AIActors {
     public class WaterDrinker : GenericActor {
-        [SerializeField] private float movementSpeed = 5f;
-
         protected override void FillValidStatesList() {
             validStates.Add(new LookForTargetState(stateMachine));
             validStates.Add(new ReachTargetState(stateMachine));
