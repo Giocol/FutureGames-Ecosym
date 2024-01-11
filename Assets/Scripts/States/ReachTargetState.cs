@@ -8,7 +8,7 @@
                 return this;
             }
             else {
-                return stateMachine.GetState<DrinkWaterState>();
+                return stateMachine.GetState<ConsumeTargetState>();
             }
         }
     }

@@ -8,7 +8,7 @@ namespace AIActors {
         protected override void FillValidStatesList() {
             validStates.Add(new LookForTargetState(stateMachine));
             validStates.Add(new ReachTargetState(stateMachine));
-            validStates.Add(new DrinkWaterState(stateMachine));
+            validStates.Add(new ConsumeTargetState(stateMachine));
         }
 
         protected override void PopulateContext() {
