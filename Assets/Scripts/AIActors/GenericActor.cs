@@ -9,14 +9,15 @@ namespace AIActors {
     public abstract class GenericActor : MonoBehaviour {
         [SerializeField] protected float distanceFromTargetThreshold = 0.5f;
         [SerializeField] protected AIActorContext context;
+        [SerializeField] protected float movementSpeed = 5f;
+        [SerializeField] protected float reachRange = 1f;
         protected List<State> validStates;
         protected StateMachine stateMachine;
-        protected float movementSpeed = 5f;
-        protected float reachRange = 1f;
 
         protected virtual void Awake() {
             validStates = new List<State>();
             stateMachine = gameObject.AddComponent<StateMachine>();
+            context = ScriptableObject.CreateInstance<AIActorContext>();
             FillValidStatesList();
             PopulateContext();
             stateMachine.Initialize(validStates, validStates[0], context);

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 namespace AIActors {
-    public class WaterDrinker : GenericActor {
+    public class Nommer : GenericActor {
         protected override void FillValidStatesList() {
             validStates.Add(new LookForTargetState(stateMachine));
             validStates.Add(new ReachTargetState(stateMachine));

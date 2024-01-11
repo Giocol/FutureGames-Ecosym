@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4864453192517060707}
   - component: {fileID: 8831376404857518595}
   m_Layer: 0
-  m_Name: WaterDrinker
+  m_Name: Nommer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1b18e135b9571e349af30eb52b0090be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,5 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88a4530b64447fe894b1a3257996312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceFromTargetThreshold: 0.5
   context: {fileID: 11400000, guid: b12f8a36aca84a948914ec66b3bfdb3a, type: 2}
-  movementSpeed: 5
+  movementSpeed: 3
+  reachRange: 1
