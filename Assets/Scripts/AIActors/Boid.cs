@@ -5,10 +5,6 @@ namespace AIActors {
         [SerializeField] private float speed = 2f;
         [SerializeField] private float viewRadius = 3f;
 
-        public float GetSpeed() {
-            return speed;
-        }
-
         public Boid[] GetClosestBoids() {
             Collider[] closestBoidsColliders = Physics.OverlapSphere(this.gameObject.transform.position, viewRadius); //TODO: optimize it with the NonAlloc version
             Boid[] closestBoids = new Boid[closestBoidsColliders.Length];
